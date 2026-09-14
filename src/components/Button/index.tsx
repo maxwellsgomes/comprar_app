@@ -6,11 +6,11 @@ type Props = TouchableHighlightProps & {
     title: string
 }
 
-export function Button(props: Props, {...rest}){
+export function Button({title, ...rest}: Props){
 
     return(
         <TouchableOpacity style={styles.container} activeOpacity={0.8} {...rest}>
-            <Text style={styles.title}>{props.title}</Text>
+            <Text style={styles.title}>{title}</Text>
         </TouchableOpacity>
     )
 }
