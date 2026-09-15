@@ -10,6 +10,7 @@
     "lucide-react-native": "^1.45.0",
     "react": "19.2.3",
     "react-native": "0.86.3",
+    "react-native-uuid": "^2.0.4",
     "svg": "^0.1.0"
   },
   "devDependencies": {

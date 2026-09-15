@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import uuid from "react-native-uuid"
 import { View, Image, Text, TouchableOpacity, FlatList, Alert } from "react-native"
 import {styles} from "./home.styles"
 import { Button } from "@/components/Button"
@@ -22,7 +23,7 @@ export function Home(){
       return Alert.alert("Adicionar", "Informe a descrição para adicionar")
     }
     const newItem = {
-      id: Math.random().toString(36).substring(2),
+      id: uuid.v4(),
       description,
       status: FilterStatus.PENDING
     }
@@ -30,6 +31,7 @@ export function Home(){
     await itemsByStatus()
     Alert.alert("Sucesso", `Adicionado ${description}`)
     setDescription("")
+    console.log(newItem)
   }
 
   async function handleRemove(id: string) {
